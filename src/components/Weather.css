@@ -1,0 +1,81 @@
+/* night mode css start */
+
+.Weather { 
+	background-image: linear-gradient(to right, #56ab2f, #a8e063);
+	color: #000000;
+}
+
+.Weather.night {
+	background-image: linear-gradient(to right, #141e30, #141e30);
+	color: #ffffff;
+}
+
+/* night mode css end */
+
+.current, .Weather, .WeatherData {
+	width: 100%;
+	height: 100%;
+}
+.current { height: 90%; }
+
+.current, .current > *, .current > .curInfo > * {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.current > .curInfo > * { flex-direction: row; }
+.current > .curCity { flex-basis: 20%; }
+.current > .curInfo > .temp { font-size: 4rem; }
+.current > .curInfo > .temp > .unit { 
+	font-size: 2rem; 
+	padding: 0;
+}
+.current > div { flex-basis: 40%; }
+.details, .details > table{ width: 100%; }
+
+.unit {
+	padding: 0 0.5rem;
+	font-size: 0.7rem;
+	align-self: flex-start;
+}
+  
+.details > table, .details > table tr, td, th {
+	text-align: center;
+	padding: 0.5rem;
+}
+
+/* Forecast Button */
+
+.Weather button {
+	display: block;
+	width: 50%;
+	
+	/* styling */
+	margin: auto;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem;
+	background-image: linear-gradient(to right, #42275a, #734b6d);
+	border: none;
+	color: white;
+}
+
+.NotFound {
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to right, #ff512f, #dd2476);
+}
+
+.NotFound, .NotFound > * {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.NotFound > * { 
+	padding: 1rem; 
+	text-align: center;
+}

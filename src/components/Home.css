@@ -1,0 +1,43 @@
+/* night mode css start */
+
+.Home { 
+	background-image: linear-gradient(to right, #56ab2f, #a8e063);
+	color: #000000;
+}
+
+.Home.night {
+	background-image: linear-gradient(to right, #141e30, #141e30);
+	color: #ffffff;
+}
+
+.Home.night input { color: white; }
+
+/* night mode css end */
+
+
+
+.Home, .Home > form, .Home > form > div { 
+	width: 100%; 
+	height: 100%;
+}
+.Home > form > div {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+.Home > form > div > input { 
+	width: 50%;
+	margin-top: 20vh;
+
+	padding: 0.6rem;
+	font-size: 1.5rem;
+	background-color: transparent;
+	border: none;
+	border-bottom : 1px solid;
+}
+
+@media screen and (max-width: 576px) {
+	.Home > form > div > input {
+		width: 65%;
+	}
+}

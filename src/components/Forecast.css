@@ -1,0 +1,33 @@
+/* night mode css start */
+
+.Forecast { 
+	background-image: linear-gradient(to right, #56ab2f, #a8e063);
+	color: #000000;
+}
+
+.Forecast.night {
+	background-image: linear-gradient(to right, #141e30, #141e30);
+	color: #ffffff;
+}
+
+/* night mode css end */
+.Forecast {
+	height: 100%;
+	width: 100%;
+}
+
+.Forecast, .Forecast > * {
+	flex-basis: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.Forecast > .header { flex-basis: 20%; }
+
+.Forecast > .table-container {
+	height: 100%;
+	max-width: 100vw;
+	overflow: hidden;
+}

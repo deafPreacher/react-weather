@@ -1,0 +1,37 @@
+* { 
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto-Light';
+}
+
+.App {
+	width: 65%;
+	height: 100vh;
+	margin: auto;
+/*	border: 1px solid;*/
+}
+
+.nightModeContainer {
+	position: absolute;
+	right: 0;
+	padding: 1rem;
+}
+
+.nightModeContainer > .nightModeBtn{
+	background-color: #ffffff;
+	color: #323232;
+	padding: 0.2rem;
+	border : 1px solid #323232;
+}
+
+.App.night > .nightModeContainer > .nightModeBtn{
+	background-color: #323232;
+	color: #ffffff;
+	border : 1px solid #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+	.App {
+		width: 100%;
+	}
+}
