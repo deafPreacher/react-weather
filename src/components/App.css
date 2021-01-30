@@ -11,6 +11,24 @@
 /*	border: 1px solid;*/
 }
 
+/* night mode css start */
+
+.App { 
+	background-image: linear-gradient(to right, #56ab2f, #a8e063);
+	color: #000000;
+}
+
+.App.night {
+	background-image: linear-gradient(to right, #141e30, #141e30);
+	color: #ffffff;
+}
+
+.App-Wrapper.night {
+	background-color: #0c1524;
+}
+
+/* night mode css end */
+
 .nightModeContainer {
 	position: absolute;
 	right: 0;

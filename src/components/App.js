@@ -13,23 +13,27 @@ const App = (props) => {
   const [nightMode, setNightMode] = useState(false);
 
   return (
-    <div className={getNightClass('App', nightMode)}>
-      <div className='nightModeContainer'>
-        <button 
-          className='nightModeBtn'
-          onClick={() => setNightMode(!nightMode)} >
-          {nightMode ? 'switch to light' : 'switch to night'}
-        </button>
-      </div>
-      <Router>
-      	
-      	<Switch>      		
-      		<Route path='/forecast/:cityId'> <Forecast nightMode={nightMode}/> </Route>
-      		<Route path='/weather/:city'> <Weather nightMode={nightMode}/> </Route>
-      		<Route path='/'> <Home nightMode={nightMode}/> </Route>
-      	</Switch>
+    <div className={getNightClass('App-Wrapper', nightMode)}>
+      <div className={getNightClass('App', nightMode)}>
+        
+        <div className='nightModeContainer'>
+          <button 
+            className='nightModeBtn'
+            onClick={() => setNightMode(!nightMode)} >
+            {nightMode ? 'switch to light' : 'switch to night'}
+          </button>
+        </div>
+        
+        <Router>
+        	
+        	<Switch>      		
+        		<Route path='/forecast/:cityId'> <Forecast nightMode={nightMode}/> </Route>
+        		<Route path='/weather/:city'> <Weather nightMode={nightMode}/> </Route>
+        		<Route path='/'> <Home nightMode={nightMode}/> </Route>
+        	</Switch>
 
-      </Router>
+        </Router>
+      </div>
     </div>
   );
 }

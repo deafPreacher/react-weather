@@ -4,8 +4,8 @@ import weatherServices from '../services/weatherServices.js';
 import {getIconUrl} from '../utils/config.js';
 import {DateTime} from 'luxon';
 import {getNightClass} from '../utils/helpers.js';
+import Error from './Error';
 import './Weather.css';
-
 
 const WeatherData = ({weather}) => {
 	const history = useHistory();
@@ -69,39 +69,23 @@ const WeatherData = ({weather}) => {
 		);
 }
 
-const NotFound = () => {
-	return (
-		<div className='NotFound'>
-			<h1>Not Found</h1>
-			<p>the weather data for given city is not found, please check for any spelling mistakes.</p>
-		</div>
-	);
-}
-
 const Weather = ({nightMode}) => {
 	const city = useParams().city || '';
 
 	const [weather, setWeather] = useState(null);
 
 	useEffect(() => {
-			weatherServices
+		weatherServices
 			.getWeatherOf(city)
-			.then(data => {
-				console.log(data);
-				setWeather(data);
-			})
-			.catch(err => {
-				console.log(err);
-				setWeather(err.response.data);
-			})
-			.catch(err => console.error(err));
+			.then(data => setWeather(data))
+			.catch(err => setWeather({name : err.name, message : err.message}))
 	}, [])
 
 	if (!weather) { return null; }
 
 	return (
 			<div className={getNightClass('Weather', nightMode)}>
-				{ (weather.cod === 200)? <WeatherData weather={weather} /> : <NotFound /> }
+				{ (weather.cod === 200)? <WeatherData weather={weather} /> : <Error err={weather}/> }
 			</div>
 		);
 }

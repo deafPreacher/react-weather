@@ -28,6 +28,8 @@
 
 .Forecast > .table-container {
 	height: 100%;
-	max-width: 100vw;
-	overflow: hidden;
+	width: 70%;
+	min-width: 320px;
+	overflow-x: scroll;
+	align-items: flex-start;
 }
