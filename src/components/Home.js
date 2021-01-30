@@ -22,7 +22,7 @@ const Home = ({nightMode}) => {
 						<input
 							type='text'
 							name='searchQuery'
-							placeholder='search'
+							placeholder='e.g. london'
 						/>
 					</div>
 				</form>
