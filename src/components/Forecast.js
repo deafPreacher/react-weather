@@ -5,6 +5,7 @@ import {filterByTime, getNightClass} from '../utils/helpers.js'
 import {getIconUrl} from '../utils/config.js';
 import {DateTime} from 'luxon';
 import Error from './Error';
+import Page from './Page';
 import './Forecast.css';
 
 const ForecastData = ({forecast}) => {
@@ -61,9 +62,11 @@ const Forecast = ({nightMode}) => {
 		return null;
 
 	return (
+		<Page>
 			<div className={getNightClass('Forecast', nightMode)}>
 				{forecast.cod === '200' ? <ForecastData forecast={forecast} /> : <Error err={forecast}/>}				
 			</div>
+		</Page>
 		);
 }
 

@@ -1,12 +1,14 @@
 /* night mode css start */
 
 .Weather { 
-	background-image: linear-gradient(to right, #56ab2f, #a8e063);
+	/*background-image: linear-gradient(to right, #56ab2f, #a8e063);*/
+	background-color: transparent;
 	color: #000000;
 }
 
 .Weather.night {
-	background-image: linear-gradient(to right, #141e30, #141e30);
+	background-color: transparent;
+	/*background-image: linear-gradient(to right, #141e30, #141e30);*/
 	color: #ffffff;
 }
 

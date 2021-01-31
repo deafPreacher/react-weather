@@ -1,4 +1,4 @@
-const APP_ID = 'your openweathermap api key here';
+const APP_ID = process.env.REACT_APP_APPID;
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 export const getIconUrl = (iconId) => {

@@ -5,6 +5,7 @@ import {getIconUrl} from '../utils/config.js';
 import {DateTime} from 'luxon';
 import {getNightClass} from '../utils/helpers.js';
 import Error from './Error';
+import Page from './Page';
 import './Weather.css';
 
 const WeatherData = ({weather}) => {
@@ -84,9 +85,11 @@ const Weather = ({nightMode}) => {
 	if (!weather) { return null; }
 
 	return (
+		<Page>
 			<div className={getNightClass('Weather', nightMode)}>
 				{ (weather.cod === 200)? <WeatherData weather={weather} /> : <Error err={weather}/> }
 			</div>
+		</Page>
 		);
 }
 
